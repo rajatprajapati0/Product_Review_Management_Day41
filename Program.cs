@@ -35,7 +35,7 @@ namespace Product_Review_Management
                     "-\nENter 3 :Retrieve count of review present product Id"
                     + "-\nENter 4 :Retrieve only productID and review "
                     + "-\nENter 5 :skip top 5 records from the list"
-                    + "-\nENter 6: Data table git ");
+                    + "-\nENter 6: Data table");
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
