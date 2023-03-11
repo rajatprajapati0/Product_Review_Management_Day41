@@ -17,7 +17,15 @@ namespace Product_Review_Management
                                 select productReview).Take(3);
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike);
+                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike+"\n");
+            }
+        }
+        public void FilterRecord(List<ProductReview> ListproductReviews)
+        {
+            var recordedData = from ProductReviews in ListproductReviews where (ProductReviews.ProductId == 1 || ProductReviews.ProductId == 4 || ProductReviews.ProductId == 9) && ProductReviews.Rating > 3 select ProductReviews;
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike+"\n");
             }
         }
     }
