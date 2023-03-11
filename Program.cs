@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace Product_Review_Management
 {
-    internal class Program
+    public class Program
     {
+      public static  List<ProductReview> productReviews;
         static void Main(string[] args)
         {
             Console.WriteLine("Product Review Management");
-            List<ProductReview> productReviews = new List<ProductReview>() 
+             productReviews = new List<ProductReview>() 
             {
                 new ProductReview() { ProductId = 1, UserId = 1, Rating = 5,   Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 2, UserId = 2, Rating = 4.5, Review = "Good", isLike = true },
@@ -35,7 +36,8 @@ namespace Product_Review_Management
                     "-\nENter 3 :Retrieve count of review present product Id"
                     + "-\nENter 4 :Retrieve only productID and review "
                     + "-\nENter 5 :skip top 5 records from the list"
-                    + "-\nENter 6: Data table");
+                    + "-\nENter 6: Retriev data from Data table");
+               
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
@@ -60,7 +62,7 @@ namespace Product_Review_Management
                         managment.RetriveSkipRecords(productReviews);
                         break;
                     case 6:
-                        managment.createTable(productReviews);
+                        managment.RetriveisLikeRecords();
                         break;
 
                     default:
