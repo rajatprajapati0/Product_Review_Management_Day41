@@ -8,6 +8,7 @@ namespace Product_Review_Management
 {
     public class Managment
     {
+        DataTable dataTable = new DataTable();
         public void TopRecords(List<ProductReview>  ListProductreviews) 
         {
             var recordedData = (from productReview in ListProductreviews
@@ -51,6 +52,25 @@ namespace Product_Review_Management
 
             }
         }
+        public void createTable(List<ProductReview> ListproductReviews)
+        {
+            dataTable.Columns.Add("ProductId");
+            dataTable.Columns.Add("UserId");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            foreach (var Pr in ListproductReviews)
+            {
+                dataTable.Rows.Add(Pr.ProductId, Pr.UserId, Pr.Rating, Pr.Review, Pr.isLike);
+
+            }
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine("ProductId: " + row[0] + " UserId: " + row[1] + " Rating: " + row[2] + " Review: " + row[3] + " isLike: " + row[4] + "\n");
+
+            }
+        }
+
 
     }
 }

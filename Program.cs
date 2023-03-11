@@ -34,7 +34,8 @@ namespace Product_Review_Management
                     "\nEnter 2 : for finding  product  above 3 ratings and by product id :" +
                     "-\nENter 3 :Retrieve count of review present product Id"
                     + "-\nENter 4 :Retrieve only productID and review "
-                    + "-\nENter 5 :skip top 5 records from the list");
+                    + "-\nENter 5 :skip top 5 records from the list"
+                    + "-\nENter 6: Data table git ");
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
@@ -57,6 +58,9 @@ namespace Product_Review_Management
                         break;
                     case 5:
                         managment.RetriveSkipRecords(productReviews);
+                        break;
+                    case 6:
+                        managment.createTable(productReviews);
                         break;
 
                     default:
