@@ -36,8 +36,10 @@ namespace Product_Review_Management
                     "-\nENter 3 :Retrieve count of review present product Id"
                     + "-\nENter 4 :Retrieve only productID and review "
                     + "-\nENter 5 :skip top 5 records from the list"
-                    + "-\nENter 6: Retriev data from Data table");
-               
+                    + "-\nENter 6: Retriev data from Data table"
+                     + "-\nENter 7:average rating of the each productId");
+
+
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
@@ -63,6 +65,9 @@ namespace Product_Review_Management
                         break;
                     case 6:
                         managment.RetriveisLikeRecords();
+                        break;
+                    case 7:
+                        managment.RetriveAverageRatingRecords(productReviews);
                         break;
 
                     default:

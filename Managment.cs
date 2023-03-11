@@ -65,6 +65,21 @@ namespace Product_Review_Management
 
             }
         }
+        public void RetriveAverageRatingRecords(List<ProductReview> ListproductReviews)
+        {
+            for (int i = 1; i < ListproductReviews.Count; i++)
+            {
+                foreach (var ProductReview in ListproductReviews)
+                {
+                    if (ProductReview.ProductId == i)
+                    {
+                        var recordedData = ListproductReviews.Where(x => x.ProductId == i).Average(x => x.Rating);
+                        Console.WriteLine($"ProductId:"+ProductReview.ProductId+" AverageRating:"+ recordedData);
+                    }
+                }
+
+            }
+        }
 
 
 
