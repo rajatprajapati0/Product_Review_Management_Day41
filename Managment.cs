@@ -33,8 +33,17 @@ namespace Product_Review_Management
             var recordedData = ListproductReviews.GroupBy(x => x.ProductId).Select(x => new { productId = x.Key, count = x.Count() });
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: "+ Pr.productId  +" Count: " + Pr.count);
+                Console.WriteLine("ProductId: "+ Pr.productId  +" Count: " + Pr.count);
             }
         }
+        public void RetriveIdandReviewRecords(List<ProductReview> ListproductReviews)
+        {
+            var recordedData = ListproductReviews.Select(x => new { productId = x.ProductId, review = x.Review });
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine("ProductId: " + Pr.productId + "  Review: " + Pr.review);
+            }
+        }
+
     }
 }

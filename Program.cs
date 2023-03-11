@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Product_Review_Management
 {
@@ -34,7 +32,8 @@ namespace Product_Review_Management
             {
                 Console.WriteLine("Enter 0 : to end Program \n"+"Enter 1: for finding top 3 high rated product :- " +
                     "\nEnter 2 : for finding  product  above 3 ratings and by product id :" +
-                    "-\nENter 3:Retrieve count of review present product Id");
+                    "-\nENter 3 :Retrieve count of review present product Id"
+                    + "-\nENter 4 :Retrieve only productID and review ");
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
@@ -51,6 +50,9 @@ namespace Product_Review_Management
                         break;
                     case 3:
                         managment.RetriveCountOfRecords(productReviews);
+                        break;
+                    case 4:
+                        managment.RetriveIdandReviewRecords(productReviews);
                         break;
 
                     default:
