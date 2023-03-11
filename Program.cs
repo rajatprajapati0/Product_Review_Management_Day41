@@ -37,7 +37,8 @@ namespace Product_Review_Management
                     + "-\nENter 4 :Retrieve only productID and review "
                     + "-\nENter 5 :skip top 5 records from the list"
                     + "-\nENter 6: Retriev data from Data table"
-                     + "-\nENter 7:average rating of the each productId");
+                     + "-\nENter 7:average rating of the each productId"
+                      + "-\nENter 8:to find review message 'nice'");
 
 
 
@@ -68,6 +69,9 @@ namespace Product_Review_Management
                         break;
                     case 7:
                         managment.RetriveAverageRatingRecords(productReviews);
+                        break;
+                    case 8:
+                        managment.RetriveReviewContainsNiceRecords(productReviews);
                         break;
 
                     default:

@@ -80,6 +80,14 @@ namespace Product_Review_Management
 
             }
         }
+        public void RetriveReviewContainsNiceRecords(List<ProductReview> ListproductReviews)
+        {
+            var recordedData = ListproductReviews.Where(x => x.Review.Contains("Nice"));
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike + "\n");
+            }
+        }
 
 
 
