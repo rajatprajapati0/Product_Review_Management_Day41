@@ -8,8 +8,6 @@ namespace Product_Review_Management
 {
     public class Managment
     {
-       
-          
         public void TopRecords(List<ProductReview>  ListProductreviews) 
         {
             var recordedData = (from productReview in ListProductreviews
@@ -42,6 +40,15 @@ namespace Product_Review_Management
             foreach (var Pr in recordedData)
             {
                 Console.WriteLine("ProductId: " + Pr.productId + "  Review: " + Pr.review);
+            }
+        }
+        public void RetriveSkipRecords(List<ProductReview> ListproductReviews)
+        {
+            var recordedData = ListproductReviews.Skip(5).ToList();
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike + "\n");
+
             }
         }
 

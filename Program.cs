@@ -33,7 +33,8 @@ namespace Product_Review_Management
                 Console.WriteLine("Enter 0 : to end Program \n"+"Enter 1: for finding top 3 high rated product :- " +
                     "\nEnter 2 : for finding  product  above 3 ratings and by product id :" +
                     "-\nENter 3 :Retrieve count of review present product Id"
-                    + "-\nENter 4 :Retrieve only productID and review ");
+                    + "-\nENter 4 :Retrieve only productID and review "
+                    + "-\nENter 5 :skip top 5 records from the list");
 
                int check =int.Parse(Console.ReadLine());
                 switch (check)
@@ -53,6 +54,9 @@ namespace Product_Review_Management
                         break;
                     case 4:
                         managment.RetriveIdandReviewRecords(productReviews);
+                        break;
+                    case 5:
+                        managment.RetriveSkipRecords(productReviews);
                         break;
 
                     default:
