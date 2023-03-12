@@ -88,6 +88,14 @@ namespace Product_Review_Management
                 Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike + "\n");
             }
         }
+        public void RetriveUseridRecords(List<ProductReview> ListproductReviews, int id)
+        {
+            var recordedData = ListproductReviews.OrderBy(x => x.Rating).Where(x => x.UserId == id);
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine("ProductId: " + Pr.ProductId + " UserId: " + Pr.ProductId + " Rating: " + Pr.Rating + " Review: " + Pr.Review + " isLike: " + Pr.isLike + "\n");
+            }
+        }
 
 
 

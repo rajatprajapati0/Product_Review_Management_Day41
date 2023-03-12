@@ -21,6 +21,11 @@ namespace Product_Review_Management
                 new ProductReview() { ProductId = 1, UserId = 4, Rating = 4,   Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 4, UserId = 5, Rating = 4.9, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 9, UserId = 6, Rating = 4.8, Review = "Nice", isLike = true },
+                new ProductReview() { ProductId = 7, UserId = 7, Rating = 5,   Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 1, UserId =10, Rating = 4,   Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 1, UserId = 4, Rating = 4,   Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 4, UserId =10, Rating = 4.2, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 9, UserId = 6, Rating = 4.8, Review = "Nice", isLike = true },
                 new ProductReview() { ProductId = 7, UserId = 7, Rating = 5,   Review = "Good", isLike = true }
 
             };
@@ -38,7 +43,8 @@ namespace Product_Review_Management
                     + "-\nENter 5 :skip top 5 records from the list"
                     + "-\nENter 6: Retriev data from Data table"
                      + "-\nENter 7:average rating of the each productId"
-                      + "-\nENter 8:to find review message 'nice'");
+                      + "-\nENter 8:to find review message 'nice'"
+                      + "-\nENter 9:Retreive all records from the list who’s Userid -10 and order by rating");
 
 
 
@@ -72,6 +78,9 @@ namespace Product_Review_Management
                         break;
                     case 8:
                         managment.RetriveReviewContainsNiceRecords(productReviews);
+                        break;
+                    case 9:
+                        managment.RetriveUseridRecords(productReviews,10);
                         break;
 
                     default:
